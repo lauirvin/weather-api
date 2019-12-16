@@ -80,3 +80,7 @@ app.get("/clearDB", (req, res) => {
   mongo.clearDB();
   mongo.findData();
 });
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Weather API");
+});
