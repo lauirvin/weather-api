@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const url = "mongodb://127.0.0.1/db";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
-mongoose.connect(url, options, function(err, db) {
+mongoose.connect(url, options, (err, db) => {
   if (err) throw err;
   console.log("Database connected!");
 });
@@ -16,7 +16,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 
 // Open DB
-db.once("open", function() {
+db.once("open", () => {
   console.log("Database openend!");
 });
 
